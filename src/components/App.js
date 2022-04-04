@@ -5,7 +5,7 @@ import Headlines from "./Headlines";
 function App() {
 	return (
 		<React.Fragment>
-			<HeadLines />
+			<Headlines />
 		</React.Fragment>
 	);
 }
