@@ -1,4 +1,5 @@
 import * as c from './ActionTypes';
+require ( "dotenv" ).config()
 
 export const requestHeadlines = () => ({
 	type: c.REQUEST_HEADLINES
@@ -15,9 +16,11 @@ export const getHeadlinesFailure = (error) => ({
 });
 
 export const makeApiCall = () => {
+	const apiKey = process.env.REACT_APP_API_KEY;
 	return dispatch => {
 		dispatch(requestHeadlines);
-		return fetch(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${process.env.REACT_APP_API_KEY}`)
+		console.log(apiKey);
+		return fetch(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${apiKey}`)
 			.then(response => response.json())
 			.then(
 				(jsonifiedResponse) => {
