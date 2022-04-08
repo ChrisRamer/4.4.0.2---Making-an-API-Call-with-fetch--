@@ -38,7 +38,7 @@ class Headlines extends React.Component {
 
 const mapStateToProps = state => {
 	return {
-		headlines: state.headline,
+		headlines: state.headlines,
 		isLoading: state.isLoading,
 		error: state.error
 	}
